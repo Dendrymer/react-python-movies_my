@@ -2,14 +2,14 @@ from fastapi import FastAPI, Body
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
-from typing import Any
+from typing import Any, Optional
 import sqlite3
 
 
 class Movie(BaseModel):
     title: str
     year: str
-    actors: str | None = None
+    actors: Optional[str] = None
 
 app = FastAPI()
 
